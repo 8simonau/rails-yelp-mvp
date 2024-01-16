@@ -1,0 +1,22 @@
+<h1><%= @restaurant.name %></h1>
+
+<div class="card p-3">
+  <p><%= @restaurant.category %></p>
+  <p><%= @restaurant.address %></p>
+  <p><%= @restaurant.phone_number %></p>
+</div>
+
+<div class="mb-5">
+  <%= link_to "Back to the list of restaurants", restaurants_path %>
+</div>
+
+<div class="d-flex justify-content-between">
+  <h3>Reviews from customers</h3>
+  <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+</div>
+<% @restaurant.reviews.each do |review| %>
+  <div class="card mb-3 p-3">
+    <p style="font-weight:bold">Rating: <%= review.rating %></p>
+    <p><%= review.content %></p>
+  </div>
+<% end %>

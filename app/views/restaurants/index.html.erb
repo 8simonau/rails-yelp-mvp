@@ -1,0 +1,13 @@
+<h1 class="mb-4">Have a look at all the restaurants</h1>
+
+<div class="row gap-5">
+  <% @restaurants.each do |restaurant| %>
+    <div class="card p-3 shadow-sm mb-3 w-25">
+      <p><%= restaurant.name %></p>
+      <p><%= restaurant.category %></p>
+      <p><%= restaurant.address %></p>
+      <p><%= restaurant.phone_number %></p>
+      <%= link_to "See details", restaurant_path(restaurant) %>
+    </div>
+  <% end %>
+</div>
